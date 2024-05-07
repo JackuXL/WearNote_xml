@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.RecoveryActivity"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/btn_back"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/background_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circular_button_background"
+                    android:padding="20dp" />
+
+                <ImageView
+                    android:id="@+id/icon_image"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/baseline_arrow_back_ios_24" />
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif"
+                    android:text="05:20"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:text="跨版本文件恢复"
+                    android:textAlignment="center"
+                    android:textColor="#Fcd105"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/btn_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:padding="5dp"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/background_image2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circular_button_background"
+                    android:padding="20dp"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/icon_image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_ios_share_24"
+                    android:visibility="invisible" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:fadingEdge="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_horizontal"
+                    android:text="本功能目前仅能恢复 v1 版本更新到 v2/v3 版本造成的数据丢失，不支持恢复因为更换设备、清除数据等造成的数据丢失。\n更换设备请使用官方“更换手表”功能。"
+                    android:textSize="10sp" />
+
+                <LinearLayout
+                    android:id="@+id/ly_permission"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/item_background"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingLeft="12dp">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="第一步：授予储存权限"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_permission"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="未授予"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_recover"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/item_background"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingLeft="12dp">
+
+                    <TextView
+                        android:id="@+id/title3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="第二步：迁移文档"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ly_finish"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/btn_background"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="完成"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

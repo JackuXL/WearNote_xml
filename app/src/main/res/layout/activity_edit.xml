@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.EditActivity"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/invisible_rename"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:inputType="text"
+                android:imeOptions="actionDone"/>
+
+            <FrameLayout
+                android:id="@+id/btn_back"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/background_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circular_button_background"
+                    android:padding="20dp" />
+
+                <ImageView
+                    android:id="@+id/icon_image"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/baseline_arrow_back_ios_24" />
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif"
+                    android:text="05:20"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:text="示例标题"
+                    android:textAlignment="center"
+                    android:textColor="#Fcd105"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/btn_share"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/background_image2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circular_button_background"
+                    android:padding="20dp" />
+
+                <ImageView
+                    android:id="@+id/icon_image2"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_save_24" />
+
+            </FrameLayout>
+            <EditText
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:inputType="text" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:backgroundTint="#Fcd105"
+                android:fadeScrollbars="false"
+                android:fadingEdge="vertical"
+                android:fontFamily="sans-serif"
+                android:gravity="top|start"
+                android:hint="还没有输入内容哦"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:textSize="16sp">
+
+            </EditText>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_enter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                app:backgroundTint="#fcd125"
+                app:srcCompat="@drawable/baseline_keyboard_return_24" />
+        </FrameLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
