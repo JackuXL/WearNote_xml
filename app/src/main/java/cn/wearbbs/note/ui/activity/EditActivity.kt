@@ -7,7 +7,6 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -30,7 +29,6 @@ class EditActivity : AppCompatActivity() {
     private lateinit var note: Note
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_edit)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -43,9 +41,11 @@ class EditActivity : AppCompatActivity() {
             note = MainApplication.noteDao.findById(id)
             runOnUiThread{
                 val tvTitle:TextView = findViewById(R.id.tv_title)
+                val invisibleRename: EditText = findViewById(R.id.invisible_rename)
+
                 tvTitle.text = note.name
                 tvTitle.setOnClickListener {
-                    val invisibleRename: EditText = findViewById(R.id.invisible_rename)
+
                     invisibleRename.setOnKeyListener { _, keyCode, _ ->
                         if(keyCode==KeyEvent.KEYCODE_ENTER){
                             val inputText = invisibleRename.text.toString()
@@ -65,7 +65,7 @@ class EditActivity : AppCompatActivity() {
                     invisibleRename.setText(note.name)
                     invisibleRename.requestFocus()
                     val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                    imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+                    imm.showSoftInput(invisibleRename,0)
                 }
                 val etContent:EditText = findViewById(R.id.et_content)
                 etContent.setText(note.content)
