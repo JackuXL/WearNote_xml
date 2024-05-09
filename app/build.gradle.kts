@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "cn.wearbbs.note"
-    compileSdk = 34
+    compileSdk = 30
 
     defaultConfig {
         applicationId = "cn.wearbbs.note"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 30
         versionCode = 7
         versionName = "3.0"
 
@@ -41,17 +41,28 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
+    implementation(libs.androidx.core.ktx){
+        exclude group: 'androidx.activity', module: 'activity'
+        exclude group: 'androidx.appcompat', module: 'appcompat'
+    }
+    implementation(libs.androidx.appcompat){
+        exclude group: 'androidx.activity', module: 'activity'
+    }
+    implementation(libs.material){
+        exclude group: 'androidx.activity', module: 'activity'
+        exclude group: 'androidx.appcompat', module: 'appcompat'
+    }
+    implementation(libs.androidx.activity){
+        exclude group: 'androidx.activity', module: 'activity'
+        exclude group: 'androidx.appcompat', module: 'appcompat'
+    }
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
-    val room_version = "2.6.1"
+    val room_version = "2.3.0"
 
     implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor("androidx.room:room-compiler:$room_version")
