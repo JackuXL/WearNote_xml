@@ -37,7 +37,7 @@
                 android:text="WearNote 现已更新。"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 android:text="界面焕新，稳定护航。"
                 android:textAlignment="center"
                 android:textColor="#2175F3"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -56,11 +56,32 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
                 android:fontFamily="sans-serif"
-                android:text="拖拽文档项目以排序\n重命名：编辑界面点击文档名\n删除：左滑文档项"
+                android:text="拖拽文档项目以排序"
                 android:textAlignment="center"
                 android:textColor="#7D7D7D"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif"
+                android:text="重命名：编辑界面点击文档名"
+                android:textAlignment="center"
+                android:textColor="#7D7D7D"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif"
+                android:text="删除：左滑文档项"
+                android:textAlignment="center"
+                android:textColor="#7D7D7D"
+                android:textSize="14sp" />
             <LinearLayout
                 android:id="@+id/ly_finish"
                 android:layout_width="match_parent"
