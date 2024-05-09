@@ -16,6 +16,8 @@ import java.util.Locale
 class NoteAdapter(private var dataSet:List<Note>, private val listener: OnItemClickListener) : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
     interface OnItemClickListener {
         fun onItemClick(position: Int)
+
+        fun onItemLongClick(position: Int)
     }
 
     fun setDataSet(dataList: List<Note>) {
@@ -44,6 +46,11 @@ class NoteAdapter(private var dataSet:List<Note>, private val listener: OnItemCl
             // start activity
 
             listener.onItemClick(holder.adapterPosition)
+        }
+
+        holder.itemView.setOnLongClickListener {
+            listener.onItemLongClick(holder.adapterPosition)
+            return@setOnLongClickListener true
         }
     }
 
