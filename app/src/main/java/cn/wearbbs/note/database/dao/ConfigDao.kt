@@ -10,17 +10,22 @@ import cn.wearbbs.note.database.bean.Config
 @Dao
 interface ConfigDao {
     @Query("SELECT * FROM config")
-    suspend fun getAll(): MutableList<Config>
+    @SuppressWarnings
+    fun getAll(): MutableList<Config>
 
     @Query("SELECT * FROM config WHERE name LIKE :name")
-    suspend fun findByName(name: String): Config?
+    @SuppressWarnings
+    fun findByName(name: String): Config?
 
     @Insert
-    suspend fun insertAll(vararg configs: Config)
+    @SuppressWarnings
+    fun insertAll(vararg configs: Config)
 
     @Update
-    suspend fun update(config: Config)
+    @SuppressWarnings
+    fun update(config: Config)
 
     @Delete
-    suspend fun delete(config: Config)
+    @SuppressWarnings
+    fun delete(config: Config)
 }
