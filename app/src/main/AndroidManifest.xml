@@ -42,6 +42,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!--手表解绑 保留本地数据-->
+        <meta-data
+            android:name="com.xtc.unbind.clearUserData.white_list"
+            android:value="true" />
     </application>
 
 </manifest>
