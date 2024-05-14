@@ -77,19 +77,10 @@ class EditActivity : AppCompatActivity() {
                 val content = etContent.editableText
                 if(index==-1){
                     content.append("\n")
-                }
-                else{
+                } else{
                     content.insert(index, "\n")
                 }
             }
-        }
-
-
-
-
-        val btnBack:FrameLayout = findViewById(R.id.btn_back)
-        btnBack.setOnClickListener {
-            finish()
         }
 
         // Save, Actually
